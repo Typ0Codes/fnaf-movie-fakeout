@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d3qq86y7foju8"]
+
+[ext_resource type="Texture2D" uid="uid://ct0fuc6qawnv7" path="res://minigames/Minesweeper/MineSweeperassets/minesweeper.png" id="1_x257i"]
+[ext_resource type="Script" uid="uid://1mncvdkw681f" path="res://minigames/Minesweeper/tile.gd" id="2_tr85i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr85i"]
+atlas = ExtResource("1_x257i")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Tile" type="TextureButton" unique_id=105211532]
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = SubResource("AtlasTexture_tr85i")
+script = ExtResource("2_tr85i")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

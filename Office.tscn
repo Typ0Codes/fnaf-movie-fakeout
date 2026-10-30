@@ -1,0 +1,415 @@
+[gd_scene format=3 uid="uid://b7fd36j6dbgea"]
+
+[ext_resource type="Script" uid="uid://drw4mloc7cr4i" path="res://office.gd" id="1_t0itt"]
+[ext_resource type="Texture2D" uid="uid://3hulxkvvmjg7" path="res://IMG_7490 (1).png" id="1_ua801"]
+[ext_resource type="PackedScene" uid="uid://ckt7t3o52dp70" path="res://freddy_fazbears.tscn" id="2_33cmi"]
+[ext_resource type="PackedScene" uid="uid://dli1p456o0fth" path="res://NPH.tscn" id="4_43i68"]
+[ext_resource type="Script" uid="uid://bac33cvuj5fvw" path="res://freddy_five_bears.gd" id="4_p0jbg"]
+[ext_resource type="PackedScene" uid="uid://c42a4pysmp4e1" path="res://teto.tscn" id="5_3080y"]
+[ext_resource type="Texture2D" uid="uid://cwr3ng3gq3tw8" path="res://FnafMap.png" id="5_hq38p"]
+[ext_resource type="Texture2D" uid="uid://b5e6v2kdjsj1s" path="res://Typ0Bald.webp" id="5_r1f8t"]
+[ext_resource type="AudioStream" uid="uid://cb64un7s2to26" path="res://A_young_boy_screamin_#2-1793158180100.mp3" id="6_bod3d"]
+[ext_resource type="FontFile" uid="uid://dp2lehcpqm4gw" path="res://AsepriteFont.ttf" id="6_n8ipj"]
+[ext_resource type="Texture2D" uid="uid://bfgc8xeg64f0u" path="res://bgclear_transparent_828x1500.png" id="6_r1f8t"]
+[ext_resource type="Shader" uid="uid://dfs0pp5vxejrq" path="res://Palette.gdshader" id="7_knk1q"]
+[ext_resource type="Shader" uid="uid://c8dd4q1ab6ap2" path="res://Crt.gdshader" id="9_ei0gw"]
+[ext_resource type="PackedScene" uid="uid://ci100ul8jsfxf" path="res://Hallway.tscn" id="11_ttk34"]
+[ext_resource type="Texture2D" uid="uid://bhm8850lne4v0" path="res://Neil_Patrick_Harris_2013.png" id="13_kjhbo"]
+[ext_resource type="PackedScene" uid="uid://d5fbe60dyjs3" path="res://minigames/Minesweeper/MineSweeper.tscn" id="15_4fm71"]
+[ext_resource type="Script" uid="uid://cacblspi0q65f" path="res://minigamebutton.gd" id="15_gisrx"]
+[ext_resource type="Script" uid="uid://bcck211gjlxmk" path="res://minesweeperwindow.gd" id="15_yauhp"]
+[ext_resource type="PackedScene" uid="uid://b41ay0kwocxt0" path="res://minigames/snake/snake.tscn" id="18_grpir"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1f8t"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bod3d"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.6)
+draw_center = false
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Gradient" id="Gradient_knk1q"]
+offsets = PackedFloat32Array(0, 0.6268657, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.6, 0.8980392, 0.3137255, 1, 0.51, 1, 0.01999998, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_knk1q"]
+gradient = SubResource("Gradient_knk1q")
+width = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttk34"]
+shader = ExtResource("7_knk1q")
+shader_parameter/gradient = SubResource("GradientTexture1D_knk1q")
+shader_parameter/flip = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hq38p"]
+shader = ExtResource("9_ei0gw")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.14
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.95
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 1.8
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gisrx"]
+content_margin_left = 10.0
+content_margin_top = 28.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.6, 0.8980392, 0.3137255, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grpir"]
+content_margin_left = 10.0
+content_margin_top = 28.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.43928722, 0.66537905, 0.22135255, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="Theme" id="Theme_gisrx"]
+Window/styles/embedded_border = SubResource("StyleBoxFlat_gisrx")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_grpir")
+
+[node name="Node2D" type="Node2D" unique_id=883400454]
+script = ExtResource("1_t0itt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=138136123]
+position = Vector2(581, 326)
+scale = Vector2(0.2874504, 0.21825394)
+texture = ExtResource("1_ua801")
+
+[node name="Animatronics" type="Node" parent="." unique_id=2043416755]
+
+[node name="Freddy Fazbears" parent="Animatronics" unique_id=1448831353 instance=ExtResource("2_33cmi")]
+MoveMin = 5.0
+MoveMax = 15.0
+
+[node name="NPH" parent="Animatronics" unique_id=1020958312 instance=ExtResource("4_43i68")]
+MoveMin = 10.0
+MoveMax = 20.0
+
+[node name="Teto" parent="Animatronics" unique_id=1156676584 instance=ExtResource("5_3080y")]
+
+[node name="Bomb Ai Datacenter" type="Sprite2D" parent="." unique_id=1513157643]
+position = Vector2(297.00003, 555)
+scale = Vector2(0.10688406, 0.085999995)
+texture = ExtResource("6_r1f8t")
+
+[node name="Button" type="Button" parent="Bomb Ai Datacenter" unique_id=1404805668]
+anchors_preset = -1
+anchor_left = -0.27800003
+anchor_top = -0.179
+anchor_right = 1.093
+anchor_bottom = 1.0
+offset_left = -125.34161
+offset_top = -464.0581
+offset_right = -596.25867
+offset_bottom = -953.4883
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1f8t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bod3d")
+
+[node name="Cams" type="Node2D" parent="." unique_id=864786153]
+
+[node name="ColorRect2" type="ColorRect" parent="Cams" unique_id=128485808]
+offset_left = -148.0
+offset_top = -79.0
+offset_right = 1384.0
+offset_bottom = 723.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="Cams" unique_id=1690867760]
+texture_filter = 1
+position = Vector2(576, 323.60004)
+scale = Vector2(1.1517624, 1.1512249)
+texture = ExtResource("5_hq38p")
+
+[node name="ColorRect3" type="ColorRect" parent="Cams" unique_id=1470801056]
+offset_left = 414.0
+offset_top = 482.0
+offset_right = 430.0
+offset_bottom = 501.0
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Cams" unique_id=1718916192]
+offset_left = 766.0
+offset_top = 441.0
+offset_right = 1278.0
+offset_bottom = 729.0005
+
+[node name="SubViewport" type="SubViewport" parent="Cams/SubViewportContainer" unique_id=2060065131]
+handle_input_locally = false
+size = Vector2i(312, 145)
+render_target_update_mode = 4
+
+[node name="Hallway" parent="Cams/SubViewportContainer/SubViewport" unique_id=587641589 instance=ExtResource("11_ttk34")]
+
+[node name="ColorRect" type="ColorRect" parent="Cams/SubViewportContainer/SubViewport" unique_id=1778591724]
+material = SubResource("ShaderMaterial_ttk34")
+offset_left = -1.0
+offset_right = 328.655
+offset_bottom = 158.44
+
+[node name="Stats" type="Node2D" parent="Cams" unique_id=613125849]
+
+[node name="Nukes" type="Label" parent="Cams/Stats" unique_id=648582956]
+offset_left = 763.0
+offset_top = 210.0
+offset_right = 1242.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("6_n8ipj")
+theme_override_font_sizes/font_size = 81
+text = "5/5 Nukes
+"
+
+[node name="Shells" type="Label" parent="Cams/Stats" unique_id=1354342274]
+offset_left = 766.0
+offset_top = 247.0
+offset_right = 1245.0
+offset_bottom = 673.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("6_n8ipj")
+theme_override_font_sizes/font_size = 81
+text = "5/5 Shells
+"
+
+[node name="Clock" type="Label" parent="Cams/Stats" unique_id=1501826898]
+offset_left = 759.0
+offset_top = 165.0
+offset_right = 1238.0
+offset_bottom = 591.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("6_n8ipj")
+theme_override_font_sizes/font_size = 81
+text = "12am"
+
+[node name="FreddyFiveBears" type="Node2D" parent="Cams" unique_id=556703335 node_paths=PackedStringArray("Animatronic", "Hallway")]
+script = ExtResource("4_p0jbg")
+Animatronic = NodePath("../../Animatronics/Freddy Fazbears")
+Hallway = NodePath("../SubViewportContainer/SubViewport/Hallway")
+
+[node name="Station1" type="Sprite2D" parent="Cams/FreddyFiveBears" unique_id=2134648895]
+visible = false
+position = Vector2(559, 401.00003)
+scale = Vector2(0.025, 0.03)
+texture = ExtResource("5_r1f8t")
+
+[node name="Station2" type="Sprite2D" parent="Cams/FreddyFiveBears" unique_id=1934176835]
+visible = false
+position = Vector2(545, 289)
+scale = Vector2(0.025, 0.03)
+texture = ExtResource("5_r1f8t")
+
+[node name="Station3" type="Sprite2D" parent="Cams/FreddyFiveBears" unique_id=1907145992]
+visible = false
+position = Vector2(444, 377.00003)
+scale = Vector2(0.025, 0.03)
+texture = ExtResource("5_r1f8t")
+
+[node name="Station4" type="Sprite2D" parent="Cams/FreddyFiveBears" unique_id=364859892]
+visible = false
+position = Vector2(443, 483.00003)
+scale = Vector2(0.025, 0.03)
+texture = ExtResource("5_r1f8t")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cams/FreddyFiveBears" unique_id=1162765014]
+stream = ExtResource("6_bod3d")
+
+[node name="NPH" type="Node2D" parent="Cams" unique_id=578946841 node_paths=PackedStringArray("Animatronic", "Hallway")]
+script = ExtResource("4_p0jbg")
+Animatronic = NodePath("../../Animatronics/NPH")
+Hallway = NodePath("../SubViewportContainer/SubViewport/Hallway")
+
+[node name="Station1" type="Sprite2D" parent="Cams/NPH" unique_id=1125687567]
+position = Vector2(317, 175)
+scale = Vector2(0.045, 0.054)
+texture = ExtResource("13_kjhbo")
+
+[node name="Station2" type="Sprite2D" parent="Cams/NPH" unique_id=786015973]
+position = Vector2(249, 329.00003)
+scale = Vector2(0.045, 0.054)
+texture = ExtResource("13_kjhbo")
+
+[node name="Station3" type="Sprite2D" parent="Cams/NPH" unique_id=1745149258]
+position = Vector2(353, 474)
+scale = Vector2(0.045, 0.054)
+texture = ExtResource("13_kjhbo")
+
+[node name="Station4" type="Sprite2D" parent="Cams/NPH" unique_id=1371169745]
+position = Vector2(443, 480.00003)
+scale = Vector2(0.045, 0.054)
+texture = ExtResource("13_kjhbo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cams/NPH" unique_id=1282363579]
+stream = ExtResource("6_bod3d")
+
+[node name="Minesweeper" type="Button" parent="Cams" unique_id=381226241 node_paths=PackedStringArray("window")]
+offset_left = 76.0
+offset_top = 197.0
+offset_right = 188.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("6_n8ipj")
+theme_override_font_sizes/font_size = 27
+text = "Minesweeper"
+flat = true
+script = ExtResource("15_gisrx")
+window = NodePath("../../Minesweeper")
+
+[node name="Snake" type="Button" parent="Cams" unique_id=207310822 node_paths=PackedStringArray("window")]
+offset_left = 73.0
+offset_top = 216.0
+offset_right = 185.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("6_n8ipj")
+theme_override_font_sizes/font_size = 27
+text = "Snake"
+flat = true
+script = ExtResource("15_gisrx")
+window = NodePath("../../Snake")
+
+[node name="ColorRect" type="ColorRect" parent="Cams" unique_id=923751808]
+z_index = 5
+material = SubResource("ShaderMaterial_hq38p")
+offset_left = 5.0
+offset_top = 9.0
+offset_right = 1157.0
+offset_bottom = 657.0
+mouse_filter = 2
+
+[node name="clock" type="Timer" parent="." unique_id=1839208901]
+wait_time = 90.0
+autostart = true
+
+[node name="Minesweeper" type="Window" parent="." unique_id=1717010644]
+oversampling_override = 1.0
+title = "MineSweeper"
+initial_position = 1
+size = Vector2i(192, 224)
+visible = false
+unfocusable = true
+content_scale_mode = 2
+theme = SubResource("Theme_gisrx")
+theme_override_fonts/title_font = ExtResource("6_n8ipj")
+theme_override_font_sizes/title_font_size = 33
+script = ExtResource("15_yauhp")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Minesweeper" unique_id=2015902763]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Minesweeper/SubViewportContainer" unique_id=677031923]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(192, 224)
+size_2d_override = Vector2i(576, 672)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Main" parent="Minesweeper/SubViewportContainer/SubViewport" unique_id=558874037 instance=ExtResource("15_4fm71")]
+
+[node name="Snake" type="Window" parent="." unique_id=1891505453]
+oversampling_override = 1.0
+title = "Snake"
+initial_position = 1
+size = Vector2i(300, 200)
+visible = false
+unfocusable = true
+content_scale_mode = 2
+theme = SubResource("Theme_gisrx")
+theme_override_fonts/title_font = ExtResource("6_n8ipj")
+theme_override_font_sizes/title_font_size = 33
+script = ExtResource("15_yauhp")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Snake" unique_id=684907010]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Snake/SubViewportContainer" unique_id=1267410257]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(300, 200)
+size_2d_override = Vector2i(600, 400)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Main" parent="Snake/SubViewportContainer/SubViewport" unique_id=185407976 instance=ExtResource("18_grpir")]
+
+[connection signal="nphshot" from="." to="Animatronics/NPH" method="_on_node_2d_nphshot"]
+[connection signal="nuked" from="." to="Animatronics/Freddy Fazbears" method="_on_node_2d_nuked"]
+[connection signal="pressed" from="Animatronics/NPH/Button" to="." method="_NPH_Shot"]
+[connection signal="pressed" from="Bomb Ai Datacenter/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Cams/Minesweeper" to="Cams/Minesweeper" method="_on_pressed"]
+[connection signal="pressed" from="Cams/Snake" to="Cams/Snake" method="_on_pressed"]
+[connection signal="timeout" from="clock" to="." method="_on_clock_timeout"]
+[connection signal="close_requested" from="Minesweeper" to="Minesweeper" method="_on_close_requested"]
+[connection signal="won" from="Minesweeper/SubViewportContainer/SubViewport/Main/Game" to="." method="_on_minesweeper_won"]
+[connection signal="close_requested" from="Snake" to="Snake" method="_on_close_requested"]
+
+[editable path="Animatronics/NPH"]
+[editable path="Minesweeper/SubViewportContainer/SubViewport/Main"]

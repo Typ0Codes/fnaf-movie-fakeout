@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b41ay0kwocxt0"]
+
+[ext_resource type="Script" uid="uid://dhvdrdpnivr0t" path="res://minigames/snake/snake.gd" id="1_qumpe"]
+[ext_resource type="FontFile" uid="uid://dp2lehcpqm4gw" path="res://AsepriteFont.ttf" id="2_vwvtn"]
+
+[node name="Main" type="Node2D" unique_id=185407976]
+script = ExtResource("1_qumpe")
+bg_color = Color(0, 0, 0, 1)
+food_color = Color(0.51, 1, 0.01999998, 1)
+body_color = Color(0.5037122, 0.76173997, 0.2533361, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=444746317]
+
+[node name="Label" type="Label" parent="." unique_id=829836849]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.5037122, 0.76173997, 0.2533361, 1)
+theme_override_fonts/font = ExtResource("2_vwvtn")
+theme_override_font_sizes/font_size = 46
+text = "example"

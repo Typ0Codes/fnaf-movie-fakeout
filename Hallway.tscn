@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ci100ul8jsfxf"]
+
+[ext_resource type="PackedScene" uid="uid://1cvrig0v47lm" path="res://hospital-hallway/source/hallway.glb" id="1_lc7f0"]
+[ext_resource type="Texture2D" uid="uid://b5e6v2kdjsj1s" path="res://Typ0Bald.webp" id="2_yo710"]
+
+[sub_resource type="Environment" id="Environment_yo710"]
+background_mode = 1
+
+[node name="Hallway" type="Node3D" unique_id=587641589]
+
+[node name="hallway" parent="." unique_id=615687266 instance=ExtResource("1_lc7f0")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1615415066]
+transform = Transform3D(0.7767539, -0.22404487, 0.5886063, -0.042629596, 0.91373944, 0.40405855, -0.62835985, -0.33894604, 0.7001997, 2.4424665, 3.6024761, 10.512607)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=858851842]
+transform = Transform3D(0.9619, 0.26871094, -0.05042723, -0.2722841, 0.95819193, -0.08791913, 0.024694055, 0.09829998, 0.99485046, 0.14590073, -0.1069417, -0.047631264)
+light_energy = 3.851
+spot_range = 42.7236
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=508457764]
+transform = Transform3D(0.385, 0, 0, 0, 0.385, 0, 0, 0, 0.385, 0.06077051, 0, 4.8400116)
+visible = false
+billboard = 2
+shaded = true
+texture = ExtResource("2_yo710")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2078486646]
+environment = SubResource("Environment_yo710")

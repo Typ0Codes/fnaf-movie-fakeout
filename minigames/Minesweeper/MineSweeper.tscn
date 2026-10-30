@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d5fbe60dyjs3"]
+
+[ext_resource type="Script" uid="uid://dgthfixuplde" path="res://minigames/Minesweeper/game.gd" id="1_vdqwk"]
+[ext_resource type="FontFile" uid="uid://dp2lehcpqm4gw" path="res://AsepriteFont.ttf" id="2_5roj8"]
+
+[node name="Main" type="Node2D" unique_id=558874037]
+
+[node name="Game" type="Node2D" parent="." unique_id=506871858]
+script = ExtResource("1_vdqwk")
+
+[node name="Grid" type="Node2D" parent="Game" unique_id=774979544]
+position = Vector2(0, 64)
+
+[node name="ColorRect" type="ColorRect" parent="Game" unique_id=1918638511]
+z_index = -1
+offset_right = 576.0
+offset_bottom = 947.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Game/ColorRect" unique_id=1389293347]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5roj8")
+theme_override_font_sizes/font_size = 71
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Game" unique_id=324129913]
+offset_top = 636.42
+offset_right = 576.0
+offset_bottom = 668.41986
+theme_override_font_sizes/font_size = 17
+text = "Restart"
+
+[connection signal="pressed" from="Game/RestartButton" to="Game" method="_on_restart_button_pressed"]

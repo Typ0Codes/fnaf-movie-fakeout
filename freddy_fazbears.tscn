@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://ckt7t3o52dp70"]
+
+[ext_resource type="Script" uid="uid://cjo22bay2f87l" path="res://freddy_fazbears.gd" id="1_d5ofd"]
+[ext_resource type="Texture2D" uid="uid://b5e6v2kdjsj1s" path="res://Typ0Bald.webp" id="2_d5ofd"]
+[ext_resource type="AudioStream" uid="uid://fw6q4gcy6i8b" path="res://A_five_nights_at_fre_#4-1793158288623.mp3" id="3_dsac4"]
+[ext_resource type="AudioStream" uid="uid://cijf2ucu5e3ei" path="res://AI bald typ0 death.wav" id="4_csvoh"]
+
+[sub_resource type="Animation" id="Animation_d5ofd"]
+resource_name = "Jumpscare"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05),
+"update": 0,
+"values": [Vector2(568, 319), Vector2(993, 51), Vector2(638, 271), Vector2(216, 467), Vector2(179, 145), Vector2(311, 389), Vector2(293, 140), Vector2(481, 185), Vector2(914, 298)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.33333334, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.44314933, -1.7221022, -0.01792252, 0.6338092, -0.15864348, 2.487531]
+}
+
+[sub_resource type="Animation" id="Animation_dsac4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(568, 319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.44314933]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsac4"]
+_data = {
+&"Jumpscare": SubResource("Animation_d5ofd"),
+&"RESET": SubResource("Animation_dsac4")
+}
+
+[node name="Freddy Fazbears" type="Node2D" unique_id=1448831353]
+visible = false
+script = ExtResource("1_d5ofd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=754442918]
+position = Vector2(568, 319)
+rotation = 0.44314933
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_d5ofd")
+
+[node name="MoveTimer" type="Timer" parent="." unique_id=1714665823]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=694105294]
+libraries/ = SubResource("AnimationLibrary_dsac4")
+speed_scale = 1.7
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=527319570]
+stream = ExtResource("3_dsac4")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1375248562]
+stream = ExtResource("4_csvoh")
+volume_db = -3.805
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cijf2ucu5e3ei"
+path="res://.godot/imported/AI bald typ0 death.wav-0dbf49b6748407313ddb7feeeca583be.sample"
+
+[deps]
+
+source_file="res://AI bald typ0 death.wav"
+dest_files=["res://.godot/imported/AI bald typ0 death.wav-0dbf49b6748407313ddb7feeeca583be.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
