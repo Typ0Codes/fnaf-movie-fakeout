@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://u1dv8qhhconl"]
+
+[ext_resource type="Shader" uid="uid://d2lp4geb33gtq" path="res://TVStatic.gdshader" id="1_kl5lm"]
+[ext_resource type="FontFile" uid="uid://0qjnh8lp8w17" path="res://ComicRelief-Regular.ttf" id="2_m7o4v"]
+[ext_resource type="Texture2D" uid="uid://b5e6v2kdjsj1s" path="res://Typ0Bald.webp" id="3_8efu4"]
+[ext_resource type="Script" uid="uid://criamyp0krfgy" path="res://youfuckindied.gd" id="4_f2uys"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7o4v"]
+shader = ExtResource("1_kl5lm")
+shader_parameter/amount = 40.0
+
+[node name="Node2D" type="Node2D" unique_id=2063170807]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=293444294]
+material = SubResource("ShaderMaterial_m7o4v")
+offset_right = 1162.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 1)
+
+[node name="Typ0Bald" type="Sprite2D" parent="." unique_id=197105296]
+modulate = Color(1, 1, 1, 0.0627451)
+position = Vector2(477.5, 292.5)
+scale = Vector2(1.7626953, 0.73535156)
+texture = ExtResource("3_8efu4")
+
+[node name="Label" type="Label" parent="." unique_id=171818365]
+offset_left = 512.0
+offset_top = 197.0
+offset_right = 1129.0
+offset_bottom = 329.0
+theme_override_fonts/font = ExtResource("2_m7o4v")
+theme_override_font_sizes/font_size = 94
+text = "you died waow"
+
+[node name="Button" type="Button" parent="." unique_id=224148060]
+offset_left = 206.0
+offset_top = 380.0
+offset_right = 367.0
+offset_bottom = 411.0
+theme_override_fonts/font = ExtResource("2_m7o4v")
+text = "Return to main menu"
+script = ExtResource("4_f2uys")
+
+[node name="Button2" type="Button" parent="." unique_id=1566954684]
+offset_left = 773.0
+offset_top = 496.0
+offset_right = 955.0
+offset_bottom = 527.0
+theme_override_fonts/font = ExtResource("2_m7o4v")
+text = "UI design is my passion"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

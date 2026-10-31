@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://mhx551nvkqpi"]
+
+[ext_resource type="VideoStream" uid="uid://cbv2tpogl2o86" path="res://minigames/WATCH BIRDBRAIN/BIRDBRAIN.ogv" id="1_cc5oh"]
+[ext_resource type="Shader" uid="uid://dfs0pp5vxejrq" path="res://Palette.gdshader" id="2_gdp4q"]
+[ext_resource type="Shader" uid="uid://bto2q2bk2hn0f" path="res://minigames/WATCH BIRDBRAIN/ASCII.gdshader" id="2_jpb1u"]
+[ext_resource type="Texture2D" uid="uid://dwkcm0jreid7r" path="res://minigames/WATCH BIRDBRAIN/ascii.png" id="4_40dfc"]
+[ext_resource type="FontFile" uid="uid://dp2lehcpqm4gw" path="res://AsepriteFont.ttf" id="5_rfy54"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40dfc"]
+shader = ExtResource("2_jpb1u")
+shader_parameter/ascii_tex = ExtResource("4_40dfc")
+shader_parameter/ascii_size = Vector2(9, 9)
+shader_parameter/available_columns = 10
+shader_parameter/max_columns = 16
+
+[sub_resource type="Gradient" id="Gradient_gdp4q"]
+offsets = PackedFloat32Array(0, 0.57462686, 0.9925373)
+colors = PackedColorArray(0, 0, 0, 1, 0.66499996, 1, 0.32999998, 1, 0.5, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1rbyg"]
+gradient = SubResource("Gradient_gdp4q")
+width = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cc5oh"]
+shader = ExtResource("2_gdp4q")
+shader_parameter/gradient = SubResource("GradientTexture1D_1rbyg")
+shader_parameter/palette_size = 10
+shader_parameter/flip = false
+
+[node name="Birdbrain" type="Node2D" unique_id=1973154678]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=5341298]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1294033816]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewportContainer/SubViewport" unique_id=238069666]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_cc5oh")
+volume_db = -9.94
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/VideoStreamPlayer" unique_id=226306692]
+material = SubResource("ShaderMaterial_40dfc")
+layout_mode = 0
+offset_left = 1905.0
+offset_top = 1133.3333
+offset_right = 3890.0
+offset_bottom = 2313.3333
+scale = Vector2(-1, -1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=619153365]
+material = SubResource("ShaderMaterial_cc5oh")
+offset_right = 1158.0
+offset_bottom = 651.0
+
+[node name="Label" type="Label" parent="." unique_id=750875482]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.5, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_rfy54")
+theme_override_font_sizes/font_size = 63
+text = "1"

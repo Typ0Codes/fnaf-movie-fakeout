@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 func _on_close_requested() -> void:
 	self.visible = false
 	self.unfocusable = true
+	

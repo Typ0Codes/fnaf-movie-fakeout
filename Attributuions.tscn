@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bokcyxhqjhkcs"]
+
+[ext_resource type="Script" uid="uid://busbp61nlqtst" path="res://black.gd" id="1_mtj6y"]
+
+[node name="Node2D" type="Node2D" unique_id=884475342]
+
+[node name="Label" type="Label" parent="." unique_id=2058504458]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "attribution "
+
+[node name="Label2" type="Label" parent="." unique_id=199095515]
+offset_left = 44.0
+offset_top = 36.0
+offset_right = 1111.0
+offset_bottom = 709.0
+theme_override_font_sizes/font_size = 14
+text = "Birdbrain created by jamie paige (thanks for making it copytwrigte free)
+
+tigerthawk is my good freind wow
+
+uhhhhhhhhhh fuck
+
+Loopable horror ambience by ZHRØ -- https://freesound.org/s/702966/ -- License: Attribution 4.0
+
+Haunted Title Screen Ambient - Horror Piano (Coghezzi) by TommasoMotteran -- https://freesound.org/s/851791/ -- License: Attribution 4.0
+
+oh also neil patrick harris's photo comes from wikipedia. very funny man loved his work in the 2010 game awards. 
+
+this is an obvious parody of FNAF by scott cawthorn or how ever you spell his name
+
+can you tell im writing this at 5:02 pm on october 31st 2026 with less then 2 hrs before the halloween party this was created for???
+
+ok cool
+
+uhhhhhhhh 
+
+oh if it wasnt obvious then everything involved with AI bald typ0 is AI generated. except the code. i wrote that myslef.
+
+oh also i use the asesprite font
+
+i think thats everyone hopefully haha 
+"
+
+[node name="Button" type="Button" parent="." unique_id=123119129]
+offset_left = 1056.0
+offset_top = 590.0
+offset_right = 1101.0
+offset_bottom = 621.0
+text = "Back"
+script = ExtResource("1_mtj6y")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

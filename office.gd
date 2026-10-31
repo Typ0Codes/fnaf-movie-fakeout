@@ -4,8 +4,11 @@ extends Node2D
 @onready var nukes = maxnukes
 @export var maxshells = 3
 @onready var shells = maxshells
+@export var maxbreads = 5
+@onready var breads = maxbreads
 signal nuked
 signal nphshot
+signal FEED
 
 var currenttime = 12
 @export var leavetime = 6
@@ -20,9 +23,10 @@ func _process(delta: float) -> void:
 	
 	$Cams/Stats/Nukes.text = str(nukes) + "/" + str(maxnukes) + " Nukes"
 	$Cams/Stats/Shells.text = str(shells) + "/" + str(maxshells) + " Shells"
+	$Cams/Stats/Breads.text = str(breads) + "/" + str(maxbreads) + " Breads"
 	
-	if Input.is_action_just_pressed("Cams"):
-		$Cams.visible = not $Cams.visible
+	
+	
 		
 	$Cams/Stats/Clock.text = str(currenttime) + "am"
 
@@ -36,7 +40,7 @@ func _on_button_pressed() -> void:
 func _on_clock_timeout() -> void:
 	currenttime+=1
 	if currenttime == leavetime:
-		print("OHHHHHH MY GODDD I DID IT I DDIIIIIDDD ITTTTT")
+		get_tree().change_scene_to_file("res://Main Menu.tscn")
 
 
 func _NPH_Shot() -> void:
@@ -44,6 +48,15 @@ func _NPH_Shot() -> void:
 		shells -= 1
 		emit_signal("nphshot")
 
-
 func _on_minesweeper_won() -> void:
 	nukes += 1
+
+
+func _FEED() -> void:
+	if breads >= 1 and $Animatronics/Teto.station > 1:
+		breads -= 1
+		emit_signal("FEED")
+
+
+func _on_cams_pressed() -> void:
+	$Cams.visible = not $Cams.visible

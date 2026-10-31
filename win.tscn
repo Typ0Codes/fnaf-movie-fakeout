@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bwa2s4wxmc614"]
+
+[ext_resource type="Shader" uid="uid://d2lp4geb33gtq" path="res://TVStatic.gdshader" id="1_wao2c"]
+[ext_resource type="FontFile" uid="uid://0qjnh8lp8w17" path="res://ComicRelief-Regular.ttf" id="2_tmki8"]
+[ext_resource type="Script" uid="uid://criamyp0krfgy" path="res://youfuckindied.gd" id="3_yblwc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7o4v"]
+shader = ExtResource("1_wao2c")
+shader_parameter/amount = 40.0
+
+[node name="ColorRect" type="ColorRect" unique_id=974671724]
+material = SubResource("ShaderMaterial_m7o4v")
+offset_right = 1162.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=796958000]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 67.0
+offset_right = 726.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("2_tmki8")
+theme_override_font_sizes/font_size = 94
+text = "you winned waow"
+
+[node name="Button" type="Button" parent="." unique_id=2042066026]
+layout_mode = 0
+offset_left = 924.0
+offset_top = 247.0
+offset_right = 1085.0
+offset_bottom = 278.0
+theme_override_fonts/font = ExtResource("2_tmki8")
+text = "Return to main menu"
+script = ExtResource("3_yblwc")
+
+[node name="Button2" type="Button" parent="." unique_id=1971685642]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 383.0
+offset_right = 468.0
+offset_bottom = 414.0
+theme_override_fonts/font = ExtResource("2_tmki8")
+text = "fuck"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

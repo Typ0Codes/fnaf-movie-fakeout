@@ -38,7 +38,7 @@ func _run_jumpscare() -> void:
 
 	await get_tree().create_timer(2.0).timeout
 	if my_id != run_id: return 
-
+	self.position = Vector2(1152/2,648/2)
 	hiding = false
 	self.scale = Vector2(0.5, 0.5)
 	if not $AudioStreamPlayer.playing:
@@ -47,19 +47,21 @@ func _run_jumpscare() -> void:
 
 	await get_tree().create_timer(3.0).timeout
 	if my_id != run_id: return  
-
+	get_tree().change_scene_to_file("res://thecuckshow.tscn")
 	_reset_state()
 
 
 func _reset_state() -> void:
+	MoveTimer.stop()
 	hiding = false
 	in_sequence = false
 	self.scale = Vector2(0.5, 0.5)
 	self.visible = false
 	$AudioStreamPlayer.stop()
 	$AnimationPlayer.play("RESET")
-	station = 1
-
+	station = 0
+	MoveTimer.wait_time = MoveMax * 1.5
+	MoveTimer.start()
 
 func _on_move_timer_timeout() -> void:
 	if not in_sequence:
