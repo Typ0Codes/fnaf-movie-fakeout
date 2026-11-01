@@ -16,3 +16,7 @@ func _process(delta: float) -> void:
 		$Minesweeper2.visible = false
 		$Snake2.visible = false
 		$BIRDBRAIN.video.paused = true
+
+
+func _on_button_pressed() -> void:
+	visible = false

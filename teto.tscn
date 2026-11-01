@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bi8n4qi06ne6p" path="res://teto.gd" id="1_6lt68"]
 [ext_resource type="Texture2D" uid="uid://dcedy6o5r4pc1" path="res://JAMIEPAIGEMYGOAT.png" id="2_6lt68"]
-[ext_resource type="AudioStream" uid="uid://fw6q4gcy6i8b" path="res://A_five_nights_at_fre_#4-1793158288623.mp3" id="3_5uxi6"]
+[ext_resource type="AudioStream" uid="uid://d16qi1srku3q" path="res://scream2.mp3" id="3_6lt68"]
 [ext_resource type="AudioStream" uid="uid://c7i8s47c102nd" path="res://freesound_community-taco-crunch-108204.mp3" id="4_6lt68"]
 
 [sub_resource type="Animation" id="Animation_d5ofd"]
@@ -85,7 +85,7 @@ libraries/ = SubResource("AnimationLibrary_dsac4")
 speed_scale = 1.7
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=527319570]
-stream = ExtResource("3_5uxi6")
+stream = ExtResource("3_6lt68")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1375248562]
 stream = ExtResource("4_6lt68")

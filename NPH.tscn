@@ -70,6 +70,7 @@ _data = {
 [node name="NPH" type="Node2D" unique_id=1448831353]
 visible = false
 script = ExtResource("1_jv5ca")
+MoveMin = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=754442918]
 position = Vector2(568, 319)

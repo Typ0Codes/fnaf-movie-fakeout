@@ -225,7 +225,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_r1f8t")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bod3d")
 
 [node name="Cams" type="Node2D" parent="." unique_id=864786153]
-visible = false
 script = ExtResource("8_hq3s5")
 
 [node name="ColorRect2" type="ColorRect" parent="Cams" unique_id=128485808]
@@ -257,7 +256,7 @@ offset_bottom = 729.0005
 [node name="SubViewport" type="SubViewport" parent="Cams/SubViewportContainer" unique_id=2060065131]
 handle_input_locally = false
 size = Vector2i(312, 145)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Hallway" parent="Cams/SubViewportContainer/SubViewport" unique_id=587641589 instance=ExtResource("11_ttk34")]
 
@@ -542,6 +541,13 @@ render_target_update_mode = 0
 [node name="Timer" type="Timer" parent="Cams/BIRDBRAIN" unique_id=1362952465]
 autostart = true
 
+[node name="Button" type="Button" parent="Cams" unique_id=806960473]
+offset_left = 1020.0
+offset_top = 42.0
+offset_right = 1081.0
+offset_bottom = 103.0
+flat = true
+
 [node name="clock" type="Timer" parent="." unique_id=1839208901]
 wait_time = 60.0
 autostart = true
@@ -562,6 +568,7 @@ autostart = true
 [connection signal="close_requested" from="Cams/Snake2" to="Cams/Snake2" method="_on_close_requested"]
 [connection signal="close_requested" from="Cams/BIRDBRAIN" to="Cams/BIRDBRAIN" method="_on_close_requested"]
 [connection signal="timeout" from="Cams/BIRDBRAIN/Timer" to="Cams/BIRDBRAIN" method="_on_timer_timeout"]
+[connection signal="pressed" from="Cams/Button" to="Cams" method="_on_button_pressed"]
 [connection signal="timeout" from="clock" to="." method="_on_clock_timeout"]
 
 [editable path="Animatronics/NPH"]
